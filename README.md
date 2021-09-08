@@ -3,11 +3,8 @@
 </p>
 <br>
 
-<p align="left"> 
-<img src="https://komarev.com/ghpvc/?username=OvinduWijethunge&color=brightgreen" alt="watching_count" />
- </p>
  <p align="center">
-<img src="https://img.shields.io/badge/Age-26-blue" />
+<img src="https://img.shields.io/badge/Age-19-blue" />
   <img src="https://img.shields.io/badge/Focus-%20Javascript-brightgreen" />
   <img src="https://img.shields.io/badge/Lives-Lyon-success%22" />
   <img src="https://img.shields.io/badge/Languages-English%20%26%20French-brightgreen" />
