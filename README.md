@@ -30,4 +30,4 @@ const Sami: Human = {
   favoriteShow: "Person of Interest"
 }
 ```
-<h2 align="center"><a href="www.samihanine.fr">www.samihanine.fr</a></h2>
+<h2 align="center"><a href="https://www.samihanine.fr">www.samihanine.fr</a></h2>
