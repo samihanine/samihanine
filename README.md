@@ -19,7 +19,7 @@ const Sami: Human = {
   status: "Student",
   website: "www.samihanine.fr",
   origin: "French",
-  languages: ["TypeScript", "JavaScript", "Java", "Python", "C", "PHP"],
+  languages: ["TypeScript", "JavaScript", "Java", "Python", "C", "PHP", "batch"],
   libraries: ["Tailwind", "React.js", "Express"],
   frameworks: ["Next.js", "Node.js"],
   favoriteDish: "Potato gratin",
