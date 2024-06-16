@@ -32,13 +32,15 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const databaseId = process.env.NOTION_DATABASE_ID as string;
 
-    const schema = z.array(
-      z.object({
-        topic: z.enum(topics as [string, ...string[]]).default("other"),
-        title: z.string(),
-        markdown: z.string(),
-      })
-    );
+    const schema = z.object({
+      data: z.array(
+        z.object({
+          topic: z.enum(topics as [string, ...string[]]).default("other"),
+          title: z.string(),
+          markdown: z.string(),
+        })
+      ),
+    });
 
     if (!schema.safeParse(body).success) {
       return NextResponse.json(
@@ -50,9 +52,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const array = schema.parse(body);
+    const data = schema.parse(body);
+    const items = data.data;
 
-    for (const { topic, title, markdown } of array) {
+    for (const { title, markdown, topic } of items) {
       await notion.pages.create({
         parent: { database_id: databaseId },
         properties: {
