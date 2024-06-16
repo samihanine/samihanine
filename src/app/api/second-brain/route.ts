@@ -75,10 +75,10 @@ export async function POST(request: NextRequest) {
             select: { name: topic || "other" },
           },
           Keywords: {
-            title: [{ text: { content: keywords } }],
+            title: [{ text: { content: keywords || "" } }],
           },
           Source: {
-            title: [{ text: { content: source } }],
+            title: [{ text: { content: source || "" } }],
           },
         },
         children: [
