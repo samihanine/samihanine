@@ -1,6 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
 import z from "zod";
 import { Client } from "@notionhq/client";
+import { markdownToRichText } from "@tryfabric/martian";
 
 const notion = new Client({ auth: process.env.NOTION_KEY });
 
@@ -15,7 +16,7 @@ const topics = [
   "web programming",
   "artificial intelligence",
   "cybersecurity",
-  "cuisine",
+  "cooking",
   "neuroscience",
   "architecture",
   "physics and chemistry",
@@ -24,6 +25,13 @@ const topics = [
   "entrepreneurship",
   "french linguistics",
   "english linguistics",
+  "ideas of projects",
+  "books",
+  "movies",
+  "tv shows",
+  "music",
+  "dream journal",
+  "life goals",
   "other",
 ];
 
@@ -38,6 +46,8 @@ export async function POST(request: NextRequest) {
           topic: z.enum(topics as [string, ...string[]]).default("other"),
           title: z.string(),
           markdown: z.string(),
+          keywords: z.string(),
+          source: z.string().optional(),
         })
       ),
     });
@@ -54,7 +64,7 @@ export async function POST(request: NextRequest) {
 
     const items = body.data;
 
-    for (const { title, markdown, topic } of items) {
+    for (const { title, markdown, topic, keywords, source } of items) {
       await notion.pages.create({
         parent: { database_id: databaseId },
         properties: {
@@ -64,13 +74,19 @@ export async function POST(request: NextRequest) {
           Topic: {
             select: { name: topic || "other" },
           },
+          Keywords: {
+            title: [{ text: { content: keywords } }],
+          },
+          Source: {
+            title: [{ text: { content: source } }],
+          },
         },
         children: [
           {
             object: "block",
             type: "paragraph",
             paragraph: {
-              rich_text: [{ type: "text", text: { content: markdown } }],
+              rich_text: markdownToRichText(markdown),
             },
           },
         ],

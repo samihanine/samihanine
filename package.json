@@ -11,6 +11,7 @@
   "dependencies": {
     "@notionhq/client": "^2.2.15",
     "@tailwindcss/typography": "^0.5.13",
+    "@tryfabric/martian": "^1.2.4",
     "axios": "^1.7.2",
     "next": "14.2.4",
     "react": "^18",
