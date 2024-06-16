@@ -25,13 +25,14 @@ export default function Hero() {
             Hey, bienvenue sur mon site web !
           </p>
           <p className="mt-4 text-sm text-zinc-500 dark:text-zinc-400 font-light lg:text-xl">
-            I'm a digital designer, developer, and surfer from Malibu. In the
-            digital world, I craft interfaces and dive into coding intricacies.
+            I&apos;m a digital designer, developer, and surfer from Malibu. In
+            the digital world, I craft interfaces and dive into coding
+            intricacies.
             <br />
             <br />
-            Beyond screens, I find solace and joy riding waves along Malibu's
-            shores. My life blends tech and nature, coding sessions, and
-            catching waves.
+            Beyond screens, I find solace and joy riding waves along
+            Malibu&apos;s shores. My life blends tech and nature, coding
+            sessions, and catching waves.
           </p>
         </div>
         <div className="ring-1 dark:ring-white/10 ring-primary/5 rounded-3xl justify-between shadow-xl dark:shadow-thick items-center flex flex-col p-8 h-full bg-white  dark:bg-secondary">
@@ -409,8 +410,8 @@ export default function Hero() {
           <div className="md:grid md:grid-cols-2 gap-6 lg:grid-cols-1">
             <div className="mt-4">
               <p className="text-sm text-pink-500 dark:text-pink-400">
-                "Big fan of your themes. They're well-organized, look clean, and
-                are fast."
+                &quot;Big fan of your themes. They&apos;re well-organized, look
+                clean, and are fast.&quot;
               </p>
               <p className="text-xs mt-2 text-zinc-500">
                 <span className="block text-xs">Kevin Focke</span>
