@@ -75,10 +75,10 @@ export async function POST(request: NextRequest) {
             select: { name: topic || "other" },
           },
           Keywords: {
-            rich_text: [{ type: "text", text: { content: keywords } }],
+            rich_text: [{ type: "text", text: { content: keywords || "" } }],
           },
           Source: {
-            rich_text: [{ type: "text", text: { content: source } }],
+            rich_text: [{ type: "text", text: { content: source || "" } }],
           },
         },
         children: [
