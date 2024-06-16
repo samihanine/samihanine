@@ -52,8 +52,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const data = schema.parse(body);
-    const items = data.data;
+    const items = body.data;
 
     for (const { title, markdown, topic } of items) {
       await notion.pages.create({
@@ -76,15 +75,15 @@ export async function POST(request: NextRequest) {
           },
         ],
       });
-
-      return NextResponse.json(
-        {
-          message: "success",
-          success: true,
-        },
-        { status: 200 }
-      );
     }
+
+    return NextResponse.json(
+      {
+        message: "success",
+        success: true,
+      },
+      { status: 200 }
+    );
   } catch (error) {
     return NextResponse.json(
       {
