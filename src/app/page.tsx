@@ -1,9 +1,7 @@
 import Hero from "@/components/hero";
+import { redirect, RedirectType } from "next/navigation";
 
 export default function Home() {
-  return (
-    <body className="dark:bg-primary bg-zinc-200 md:h-screen">
-      <Hero />
-    </body>
-  );
+
+  return redirect("https://otopio.net", RedirectType.replace);
 }
