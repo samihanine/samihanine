@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://img.shields.io/badge/Age-21-blue" />
+	<img src="https://img.shields.io/badge/Age-22-blue" />
   <img src="https://img.shields.io/badge/Focus-%20Typescript-brightgreen" />
   <img src="https://img.shields.io/badge/Lives-Montréal-success%22" />
   <img src="https://img.shields.io/badge/Languages-English%20%26%20French-brightgreen" />
